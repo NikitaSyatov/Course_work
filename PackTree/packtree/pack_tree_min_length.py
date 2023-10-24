@@ -3,12 +3,13 @@ import matplotlib.pyplot as plt
 
 class Tree:
   def __init__(self, V, U):
+    self.root = V[0]
     self.node = V
     self.edge = U
     self.leafs = [item for item in [x[1] for x in U] if item not in [x[0] for x in U]]
-  
-  def root(self):
-    return self.node[0]
+
+  def get_root(self):
+    return self.root
 
   def nodes(self):
     return self.node
@@ -29,9 +30,20 @@ class Tree:
     for item in self.edge:
       if item[1] == child:
         return item[0]
+      
+  def subtree(self, subroot):
+    subT = [subroot]
+
+    current_child = self.childs(subroot)
+
+    if current_child != []:
+      for i in range(len(current_child)):
+        subT.append(self.subtree(current_child[i]))
+
+    return subT
   
-  def add_metV(self, start_node):
-    S = self.node
+  def add_metV(self):
+    S = list(self.nodes())
     
     metV = {node: 1 for node in self.node}
 
@@ -43,8 +55,35 @@ class Tree:
     return metV
   
   def Pack_min_length(self):
-    pass
-  
+    # вычисление меток для вершин
+    met = self.add_metV()
+
+    numP = {}
+
+    S = [(self.root, met[self.root])]
+
+    num = len(self.node)
+    # вычисление номеров вершин в укладке
+    while S:
+      cur_node = S.pop()[0]
+
+      numP[cur_node] = num
+      num -= 1
+      if met[cur_node] != 1:
+        ch = self.childs(cur_node)
+        ch = sorted(ch, key=lambda m: met[m], reverse=True)
+        S += [(x, met[x]) for x in ch]
+
+    return numP
+
+# def max_met(list_with_kortej):
+#   # print([x[1] for x in list_with_kortej])
+#   return max([x[1] for x in list_with_kortej])
+
+# def get_key_in_dict(dict, value):
+#   for key, values in dict.items():
+#         if values == value:
+#             return key
 
 # In[]:  дерево для теста
 
@@ -57,7 +96,7 @@ Example = Tree(["root", "x0", "x1", "x2", "y0", "y1", "z0", "z1", "z2", "u0", "u
 
 # In[]: вывод дерева
 
-print(Example.add_metV("w1"))
+print(Example.Pack_min_length())
 
 # nx.draw(Example, with_labels=True, font_weight='bold')
 # plt.show()
