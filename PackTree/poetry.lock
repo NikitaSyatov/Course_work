@@ -30,104 +30,6 @@ optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7"
 
 [[package]]
-name = "contourpy"
-version = "1.1.0"
-description = "Python library for calculating contours of 2D quadrilateral grids"
-category = "main"
-optional = false
-python-versions = ">=3.8"
-
-[package.dependencies]
-numpy = ">=1.16"
-
-[package.extras]
-docs = ["furo", "sphinx-copybutton"]
-bokeh = ["bokeh", "selenium"]
-mypy = ["contourpy", "docutils-stubs", "mypy (==1.2.0)", "types-pillow"]
-test = ["contourpy", "matplotlib", "pillow"]
-test-no-images = ["pytest", "pytest-cov", "wurlitzer"]
-
-[[package]]
-name = "contourpy"
-version = "1.1.1"
-description = "Python library for calculating contours of 2D quadrilateral grids"
-category = "main"
-optional = false
-python-versions = ">=3.8"
-
-[package.dependencies]
-numpy = {version = ">=1.16,<2.0", markers = "python_version <= \"3.11\""}
-
-[package.extras]
-docs = ["furo", "sphinx (>=7.2)", "sphinx-copybutton"]
-bokeh = ["bokeh", "selenium"]
-mypy = ["contourpy", "docutils-stubs", "mypy (==1.4.1)", "types-pillow"]
-test = ["contourpy", "matplotlib", "pillow"]
-test-no-images = ["pytest", "pytest-cov", "wurlitzer"]
-
-[[package]]
-name = "cycler"
-version = "0.12.0"
-description = "Composable style cycles"
-category = "main"
-optional = false
-python-versions = ">=3.8"
-
-[package.extras]
-docs = ["ipython", "matplotlib", "numpydoc", "sphinx"]
-tests = ["pytest", "pytest-cov", "pytest-xdist"]
-
-[[package]]
-name = "fonttools"
-version = "4.43.0"
-description = "Tools to manipulate font files"
-category = "main"
-optional = false
-python-versions = ">=3.8"
-
-[package.extras]
-all = ["fs (>=2.2.0,<3)", "lxml (>=4.0,<5)", "zopfli (>=0.1.4)", "lz4 (>=1.7.4.2)", "matplotlib", "sympy", "skia-pathops (>=0.5.0)", "uharfbuzz (>=0.23.0)", "brotlicffi (>=0.8.0)", "scipy", "brotli (>=1.0.1)", "munkres", "unicodedata2 (>=15.0.0)", "xattr"]
-graphite = ["lz4 (>=1.7.4.2)"]
-interpolatable = ["scipy", "munkres"]
-lxml = ["lxml (>=4.0,<5)"]
-pathops = ["skia-pathops (>=0.5.0)"]
-plot = ["matplotlib"]
-repacker = ["uharfbuzz (>=0.23.0)"]
-symfont = ["sympy"]
-type1 = ["xattr"]
-ufo = ["fs (>=2.2.0,<3)"]
-unicode = ["unicodedata2 (>=15.0.0)"]
-woff = ["zopfli (>=0.1.4)", "brotlicffi (>=0.8.0)", "brotli (>=1.0.1)"]
-
-[[package]]
-name = "kiwisolver"
-version = "1.4.5"
-description = "A fast implementation of the Cassowary constraint solver"
-category = "main"
-optional = false
-python-versions = ">=3.7"
-
-[[package]]
-name = "matplotlib"
-version = "3.8.0"
-description = "Python plotting package"
-category = "main"
-optional = false
-python-versions = ">=3.9"
-
-[package.dependencies]
-contourpy = ">=1.0.1"
-cycler = ">=0.10"
-fonttools = ">=4.22.0"
-kiwisolver = ">=1.0.1"
-numpy = ">=1.21,<2"
-packaging = ">=20.0"
-pillow = ">=6.2.0"
-pyparsing = ">=2.3.1"
-python-dateutil = ">=2.7"
-setuptools_scm = ">=7"
-
-[[package]]
 name = "more-itertools"
 version = "10.1.0"
 description = "More routines for operating on iterables, beyond itertools"
@@ -136,47 +38,12 @@ optional = false
 python-versions = ">=3.8"
 
 [[package]]
-name = "networkx"
-version = "3.1"
-description = "Python package for creating and manipulating graphs and networks"
-category = "main"
-optional = false
-python-versions = ">=3.8"
-
-[package.extras]
-default = ["numpy (>=1.20)", "scipy (>=1.8)", "matplotlib (>=3.4)", "pandas (>=1.3)"]
-developer = ["pre-commit (>=3.2)", "mypy (>=1.1)"]
-doc = ["sphinx (>=6.1)", "pydata-sphinx-theme (>=0.13)", "sphinx-gallery (>=0.12)", "numpydoc (>=1.5)", "pillow (>=9.4)", "nb2plots (>=0.6)", "texext (>=0.6.7)"]
-extra = ["lxml (>=4.6)", "pygraphviz (>=1.10)", "pydot (>=1.4.2)", "sympy (>=1.10)"]
-test = ["pytest (>=7.2)", "pytest-cov (>=4.0)", "codecov (>=2.1)"]
-
-[[package]]
-name = "numpy"
-version = "1.25.2"
-description = "Fundamental package for array computing in Python"
-category = "main"
-optional = false
-python-versions = ">=3.9"
-
-[[package]]
 name = "packaging"
 version = "23.2"
 description = "Core utilities for Python packages"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
-
-[[package]]
-name = "pillow"
-version = "10.0.1"
-description = "Python Imaging Library (Fork)"
-category = "main"
-optional = false
-python-versions = ">=3.8"
-
-[package.extras]
-docs = ["furo", "olefile", "sphinx (>=2.4)", "sphinx-copybutton", "sphinx-inline-tabs", "sphinx-removed-in", "sphinxext-opengraph"]
-tests = ["check-manifest", "coverage", "defusedxml", "markdown2", "olefile", "packaging", "pyroma", "pytest", "pytest-cov", "pytest-timeout"]
 
 [[package]]
 name = "pluggy"
@@ -190,23 +57,26 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 dev = ["pre-commit", "tox"]
 
 [[package]]
+name = "prettytable"
+version = "3.9.0"
+description = "A simple Python library for easily displaying tabular data in a visually appealing ASCII table format"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+wcwidth = "*"
+
+[package.extras]
+tests = ["pytest", "pytest-cov", "pytest-lazy-fixture"]
+
+[[package]]
 name = "py"
 version = "1.11.0"
 description = "library with cross-python path, ini-parsing, io, code, log facilities"
 category = "dev"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
-
-[[package]]
-name = "pyparsing"
-version = "3.1.1"
-description = "pyparsing module - Classes and methods to define and execute parsing grammars"
-category = "main"
-optional = false
-python-versions = ">=3.6.8"
-
-[package.extras]
-diagrams = ["railroad-diagrams", "jinja2"]
 
 [[package]]
 name = "pytest"
@@ -231,92 +101,26 @@ checkqa-mypy = ["mypy (==v0.761)"]
 testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "requests", "xmlschema"]
 
 [[package]]
-name = "python-dateutil"
-version = "2.8.2"
-description = "Extensions to the standard Python datetime module"
-category = "main"
-optional = false
-python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
-
-[package.dependencies]
-six = ">=1.5"
-
-[[package]]
-name = "setuptools-scm"
-version = "8.0.4"
-description = "the blessed package to manage your versions by scm tags"
-category = "main"
-optional = false
-python-versions = ">=3.8"
-
-[package.dependencies]
-packaging = ">=20"
-tomli = {version = ">=1", markers = "python_version < \"3.11\""}
-typing-extensions = "*"
-
-[package.extras]
-docs = ["entangled-cli", "mkdocs", "mkdocs-entangled-plugin", "mkdocs-material", "mkdocstrings", "pygments"]
-rich = ["rich"]
-test = ["build", "pytest", "rich", "wheel"]
-
-[[package]]
-name = "six"
-version = "1.16.0"
-description = "Python 2 and 3 compatibility utilities"
-category = "main"
-optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
-
-[[package]]
-name = "tomli"
-version = "2.0.1"
-description = "A lil' TOML parser"
-category = "main"
-optional = false
-python-versions = ">=3.7"
-
-[[package]]
-name = "typing-extensions"
-version = "4.8.0"
-description = "Backported and Experimental Type Hints for Python 3.8+"
-category = "main"
-optional = false
-python-versions = ">=3.8"
-
-[[package]]
 name = "wcwidth"
 version = "0.2.8"
 description = "Measures the displayed width of unicode strings in a terminal"
-category = "dev"
+category = "main"
 optional = false
 python-versions = "*"
 
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "9407d17be1322e46cf6b59f048e6ceda553d7827cf4098b10cf50a889bdfb3f3"
+content-hash = "32b04d2cde775f46b6bded8275ca23de01692196345794c199a891eb66d8aa36"
 
 [metadata.files]
 atomicwrites = []
 attrs = []
 colorama = []
-contourpy = []
-cycler = []
-fonttools = []
-kiwisolver = []
-matplotlib = []
 more-itertools = []
-networkx = []
-numpy = []
 packaging = []
-pillow = []
 pluggy = []
+prettytable = []
 py = []
-pyparsing = []
 pytest = []
-python-dateutil = []
-setuptools-scm = []
-six = []
-tomli = []
-typing-extensions = []
 wcwidth = []

@@ -118,4 +118,8 @@ Example2 = Tree(["root", "x0", "x1", "z0", "z1", "z2", "w0", "y1", "y0", "u0", "
                                                                                        ("y0", "u0"), ("y0", "u1")])
 # In[]: вывод дерева
 
-print(Example2.Pack_min_width())
+def main(): 
+  print(Example2.Pack_min_width())
+
+if __name__ == "__main__":
+  main()
